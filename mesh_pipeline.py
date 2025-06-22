@@ -26,13 +26,14 @@ from diffusers import StableDiffusionPipeline
 import os
 import nbformat
 
+
 #stuff
 
 
 # In[8]:
 
 
-img_path = "tree.png"
+img_path = "myanmar.png"
 img_bgr = cv2.imread(img_path)
 img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
 img_pil = Image.fromarray(img_rgb)
@@ -370,7 +371,7 @@ def plot_textured_mesh(vertices, triangles, image_path, title="Textured Mesh"):
     ])
     mesh = pv.PolyData(vertices, faces)
 
-    mesh.scale([3.0, 3.0, 1.0], inplace=True)
+    mesh.scale([3.0, 3.0, 20.0], inplace=True)
 
 
     # Generate UVs by projecting onto the XY-plane of the mesh bounds
