@@ -1,20 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generate Risk Map</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Risk Map Generator</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .logo {
+            width: 80px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .search-input {
+            width: 300px;
+            padding: 12px 16px;
+            border: 1px solid #000;
+            border-radius: 30px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            outline: none;
+        }
+        .generate-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .generate-btn:hover {
+            background-color: #333;
+        }
+    </style>
 </head>
 <body>
-    <h1>Generate Risk Map</h1>
+    <img class="logo" src="{{ url_for('static', filename='logo.png') }}" alt="Logo"/>
+    <h1>Risk Map Generator</h1>
     <form action="/generate-map" method="POST">
-        <label for="origin">Starting Location:</label>
-        <input type="text" id="origin" name="origin" required>
-        <br><br>
-        <label for="destination">Destination:</label>
-        <input type="text" id="destination" name="destination" required>
-        <br><br>
-        <button type="submit">Generate Map</button>
+        <input
+            type="text"
+            name="combined"
+            class="search-input"
+            placeholder="Origin, Destination"
+            required
+        />
+        <button type="submit" class="generate-btn">Generate Map</button>
     </form>
 </body>
 </html>
