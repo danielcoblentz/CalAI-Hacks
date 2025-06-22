@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Risk Map</title>
+</head>
+<body>
+    <h1>Generate Risk Map</h1>
+    <form action="/generate-map" method="POST">
+        <label for="origin">Starting Location:</label>
+        <input type="text" id="origin" name="origin" required>
+        <br><br>
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" name="destination" required>
+        <br><br>
+        <button type="submit">Generate Map</button>
+    </form>
+</body>
+</html>

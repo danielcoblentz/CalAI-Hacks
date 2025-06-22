@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1ca829fbc7b45fd94f4baa37e67d3a14 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_1ca829fbc7b45fd94f4baa37e67d3a14" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1ca829fbc7b45fd94f4baa37e67d3a14 = L.map(
+                "map_1ca829fbc7b45fd94f4baa37e67d3a14",
+                {
+                    center: [37.87153, -122.27301],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 9,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7371aa4376f5d33d05d65dc0392c2b7b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7371aa4376f5d33d05d65dc0392c2b7b.addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            var circle_marker_553fb588dba88800412af6468bb98a8f = L.circleMarker(
+                [37.87153, -122.27301],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_553fb588dba88800412af6468bb98a8f.bindTooltip(
+                `<div>
+                     Total Risk: 0.20<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4a6f2074d73ab7d0ca9ebcab269d1c3d = L.circleMarker(
+                [37.87208, -122.27308],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_4a6f2074d73ab7d0ca9ebcab269d1c3d.bindTooltip(
+                `<div>
+                     Total Risk: 0.20<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ca3e4523bfdb66a922c26c06c05e0669 = L.circleMarker(
+                [37.87215, -122.27311],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_ca3e4523bfdb66a922c26c06c05e0669.bindTooltip(
+                `<div>
+                     Total Risk: 0.20<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e583013db5068a35993942e36bf39b4a = L.circleMarker(
+                [37.87246, -122.27314],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_e583013db5068a35993942e36bf39b4a.bindTooltip(
+                `<div>
+                     Total Risk: 0.20<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fb115f466c70c4c6fb32430988e5d3f9 = L.circleMarker(
+                [37.87334, -122.27322],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_fb115f466c70c4c6fb32430988e5d3f9.bindTooltip(
+                `<div>
+                     Total Risk: 0.20<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_576c355a77eeb69335efd258b1f8ee29 = L.circleMarker(
+                [37.87512, -122.27343],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_576c355a77eeb69335efd258b1f8ee29.bindTooltip(
+                `<div>
+                     Total Risk: 0.20<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_520e5cfc3957cf9b52e3ae9b2e859687 = L.circleMarker(
+                [37.87746, -122.27369],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_520e5cfc3957cf9b52e3ae9b2e859687.bindTooltip(
+                `<div>
+                     Total Risk: 0.20<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_73fd5a5d3775564e1e867ef1ffd75da8 = L.circleMarker(
+                [37.87818, -122.27374],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_73fd5a5d3775564e1e867ef1ffd75da8.bindTooltip(
+                `<div>
+                     Total Risk: 0.20<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a90d00cb3e9216979985013746e60973 = L.circleMarker(
+                [37.87868, -122.27381],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_a90d00cb3e9216979985013746e60973.bindTooltip(
+                `<div>
+                     Total Risk: 0.20<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e70c2e1012dc93fd7f9deda3aa9cfef4 = L.circleMarker(
+                [37.87964, -122.27392],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_e70c2e1012dc93fd7f9deda3aa9cfef4.bindTooltip(
+                `<div>
+                     Total Risk: 0.20<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a35a093ae5b9d3a2f53d3ad444ff67ca = L.circleMarker(
+                [37.88181, -122.27416],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_a35a093ae5b9d3a2f53d3ad444ff67ca.bindTooltip(
+                `<div>
+                     Total Risk: 0.20<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3b5e7e8807e61ad31cf2ca212ae8e963 = L.circleMarker(
+                [37.88306, -122.27429],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_3b5e7e8807e61ad31cf2ca212ae8e963.bindTooltip(
+                `<div>
+                     Total Risk: 0.20<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d55b4965df3e16219d10e7da07b89c3f = L.circleMarker(
+                [37.88343, -122.27432],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_d55b4965df3e16219d10e7da07b89c3f.bindTooltip(
+                `<div>
+                     Total Risk: 0.20<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_673dd284a0b21a0d973dde22a2814c59 = L.circleMarker(
+                [37.88463, -122.27447],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_673dd284a0b21a0d973dde22a2814c59.bindTooltip(
+                `<div>
+                     Total Risk: 0.20<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1a0b89d3547044cf3fd26b2f0033fb65 = L.circleMarker(
+                [37.88486, -122.27453],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_1a0b89d3547044cf3fd26b2f0033fb65.bindTooltip(
+                `<div>
+                     Total Risk: 0.20<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a1d20f85555f3ba986c376ac597bcfbe = L.circleMarker(
+                [37.88507, -122.27465],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_a1d20f85555f3ba986c376ac597bcfbe.bindTooltip(
+                `<div>
+                     Total Risk: 0.20<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5eb36b86d750367b38985cd4263441fe = L.circleMarker(
+                [37.88529, -122.27481],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_5eb36b86d750367b38985cd4263441fe.bindTooltip(
+                `<div>
+                     Total Risk: 0.20<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e43912fab1404b44e2479f5eb29652bb = L.circleMarker(
+                [37.88543, -122.27494],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_e43912fab1404b44e2479f5eb29652bb.bindTooltip(
+                `<div>
+                     Total Risk: 0.20<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b321b8cb4f8cd053e36e1d3864b75dd2 = L.circleMarker(
+                [37.88576, -122.27529],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_b321b8cb4f8cd053e36e1d3864b75dd2.bindTooltip(
+                `<div>
+                     Total Risk: 0.20<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4fdc18dc567f4e920ea62270b3c2dc6a = L.circleMarker(
+                [37.88614, -122.27561],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_4fdc18dc567f4e920ea62270b3c2dc6a.bindTooltip(
+                `<div>
+                     Total Risk: 0.20<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.20
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c93fe1b8b2e233bdb1afd8a857cb3510 = L.circleMarker(
+                [37.88635, -122.27575],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_c93fe1b8b2e233bdb1afd8a857cb3510.bindTooltip(
+                `<div>
+                     Total Risk: 0.40<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d6b22e507861f7d2e7fdc0cb49b2f109 = L.circleMarker(
+                [37.88678, -122.27599],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_d6b22e507861f7d2e7fdc0cb49b2f109.bindTooltip(
+                `<div>
+                     Total Risk: 0.40<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_299713859ec26479a8ac3bc384941a43 = L.circleMarker(
+                [37.88724, -122.27619],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_299713859ec26479a8ac3bc384941a43.bindTooltip(
+                `<div>
+                     Total Risk: 0.40<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_306978b975f3aa95adf54ec7c49c3023 = L.circleMarker(
+                [37.88771, -122.27631],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_306978b975f3aa95adf54ec7c49c3023.bindTooltip(
+                `<div>
+                     Total Risk: 0.40<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f305c315a3334359deaf5f562f9c812d = L.circleMarker(
+                [37.88829, -122.27644],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_f305c315a3334359deaf5f562f9c812d.bindTooltip(
+                `<div>
+                     Total Risk: 0.40<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a0364f5496fa2a64775b9c0fd80beb9e = L.circleMarker(
+                [37.88889, -122.27656],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_a0364f5496fa2a64775b9c0fd80beb9e.bindTooltip(
+                `<div>
+                     Total Risk: 0.40<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_286981a3ff409575a2c977960466ddc2 = L.circleMarker(
+                [37.88888, -122.27683],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_286981a3ff409575a2c977960466ddc2.bindTooltip(
+                `<div>
+                     Total Risk: 0.40<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cda67e2e36928a2367041b62db0ee5af = L.circleMarker(
+                [37.8889, -122.27717],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_cda67e2e36928a2367041b62db0ee5af.bindTooltip(
+                `<div>
+                     Total Risk: 0.40<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2f873576f321c94deed9f6e9e5e14b11 = L.circleMarker(
+                [37.88894, -122.27746],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_2f873576f321c94deed9f6e9e5e14b11.bindTooltip(
+                `<div>
+                     Total Risk: 0.40<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d2f1cc652554cb6594e5271e7b5be990 = L.circleMarker(
+                [37.88909, -122.27798],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_d2f1cc652554cb6594e5271e7b5be990.bindTooltip(
+                `<div>
+                     Total Risk: 0.40<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_02ac589460fe305d8cd8152ce41b642c = L.circleMarker(
+                [37.88929, -122.27844],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_02ac589460fe305d8cd8152ce41b642c.bindTooltip(
+                `<div>
+                     Total Risk: 0.40<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_885ed2b8e9e3a3abd29080f7d528e8b9 = L.circleMarker(
+                [37.88954, -122.2789],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_885ed2b8e9e3a3abd29080f7d528e8b9.bindTooltip(
+                `<div>
+                     Total Risk: 0.40<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_337eab73de84c0d3f9099c972992210e = L.circleMarker(
+                [37.88966, -122.27922],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_337eab73de84c0d3f9099c972992210e.bindTooltip(
+                `<div>
+                     Total Risk: 0.40<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a321b832a27c0ee5f8c2b4958a040c7b = L.circleMarker(
+                [37.88969, -122.27936],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_a321b832a27c0ee5f8c2b4958a040c7b.bindTooltip(
+                `<div>
+                     Total Risk: 0.40<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_35ad49f255097e00692048620c5ee236 = L.circleMarker(
+                [37.88974, -122.27973],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_35ad49f255097e00692048620c5ee236.bindTooltip(
+                `<div>
+                     Total Risk: 0.40<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ea9e1d300183014cc7d15443c43fa9bd = L.circleMarker(
+                [37.88982, -122.28029],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_ea9e1d300183014cc7d15443c43fa9bd.bindTooltip(
+                `<div>
+                     Total Risk: 0.40<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b527cb1f1d8ba172e11cf766284602dc = L.circleMarker(
+                [37.88983, -122.2807],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_b527cb1f1d8ba172e11cf766284602dc.bindTooltip(
+                `<div>
+                     Total Risk: 0.40<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_888d024f07562da6c47a1bab3393ad3e = L.circleMarker(
+                [37.88981, -122.28093],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_888d024f07562da6c47a1bab3393ad3e.bindTooltip(
+                `<div>
+                     Total Risk: 0.40<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b5c2ad657d42356d3f35e6c91628aa3a = L.circleMarker(
+                [37.88972, -122.28124],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_b5c2ad657d42356d3f35e6c91628aa3a.bindTooltip(
+                `<div>
+                     Total Risk: 0.40<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b4732d532de8a0704f18600070d541b6 = L.circleMarker(
+                [37.88955, -122.28162],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_b4732d532de8a0704f18600070d541b6.bindTooltip(
+                `<div>
+                     Total Risk: 0.40<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.40
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d57f8b0f80ce07c1ebd2fccdb3974175 = L.circleMarker(
+                [37.88933, -122.28205],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_d57f8b0f80ce07c1ebd2fccdb3974175.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6ce9442b02ba47fd5bea6eee64aa45aa = L.circleMarker(
+                [37.88921, -122.28244],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_6ce9442b02ba47fd5bea6eee64aa45aa.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d943c259278b4c4aa4c448206d8836e5 = L.circleMarker(
+                [37.88916, -122.2827],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_d943c259278b4c4aa4c448206d8836e5.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fd382d43c8a158e90877b9749ef77d03 = L.circleMarker(
+                [37.88914, -122.28295],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_fd382d43c8a158e90877b9749ef77d03.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fa9cb2fe366c3e47146be728dab1ee55 = L.circleMarker(
+                [37.88915, -122.28319],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_fa9cb2fe366c3e47146be728dab1ee55.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a52dbc36812dfcbe9bd8ff0fbc1b9e5e = L.circleMarker(
+                [37.88917, -122.28339],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_a52dbc36812dfcbe9bd8ff0fbc1b9e5e.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d1472d3195eac7704e24dc2e11b94b74 = L.circleMarker(
+                [37.88924, -122.28372],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_d1472d3195eac7704e24dc2e11b94b74.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f796dd8957e3d2870d5bb8c3e00038d2 = L.circleMarker(
+                [37.88933, -122.28402],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_f796dd8957e3d2870d5bb8c3e00038d2.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_90b06cb80bbd05f6e0f201ffe99bbd52 = L.circleMarker(
+                [37.88947, -122.28463],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_90b06cb80bbd05f6e0f201ffe99bbd52.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c1e4b194f79d316f6265bd549201d8ad = L.circleMarker(
+                [37.88949, -122.2848],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_c1e4b194f79d316f6265bd549201d8ad.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a0783db2c4690b604f64c4bc40757dc4 = L.circleMarker(
+                [37.8895, -122.28551],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_a0783db2c4690b604f64c4bc40757dc4.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_38e8ab0516fa173e8e11e59062af9c9e = L.circleMarker(
+                [37.88948, -122.28578],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_38e8ab0516fa173e8e11e59062af9c9e.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_22d9fdc20bd02e910353763e3ee6a0f0 = L.circleMarker(
+                [37.88945, -122.28596],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_22d9fdc20bd02e910353763e3ee6a0f0.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4869528e10fbf712e5f2ccfc5684b891 = L.circleMarker(
+                [37.88932, -122.28647],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_4869528e10fbf712e5f2ccfc5684b891.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6f2aea060d8d46abc886cc5c198e6ecf = L.circleMarker(
+                [37.88918, -122.28682],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_6f2aea060d8d46abc886cc5c198e6ecf.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_34db7e79c7b6aa10cafe61103c9e68a9 = L.circleMarker(
+                [37.8891, -122.28699],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_34db7e79c7b6aa10cafe61103c9e68a9.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4aa8ad35756741b131758ff15722031a = L.circleMarker(
+                [37.88907, -122.28707],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_4aa8ad35756741b131758ff15722031a.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4ee02e78e1cd2552fa8e8a4193ea1c65 = L.circleMarker(
+                [37.88923, -122.28712],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_4ee02e78e1cd2552fa8e8a4193ea1c65.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b18e083efb6cdb557e6b4f08c0ff33e6 = L.circleMarker(
+                [37.88924, -122.28713],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_b18e083efb6cdb557e6b4f08c0ff33e6.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1273222eacc8108e6b8ec2505ed335ed = L.circleMarker(
+                [37.8894, -122.28718],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_1273222eacc8108e6b8ec2505ed335ed.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_91f023dbac48f9d78da5e55145726f95 = L.circleMarker(
+                [37.89015, -122.28742],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+            circle_marker_91f023dbac48f9d78da5e55145726f95.bindTooltip(
+                `<div>
+                     Total Risk: 0.60<br>Fire Risk: 0.00<br>Tornado Risk: 0.00<br>Traffic Risk: 0.60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_d6c549f57f02493a67bce0d10b2f1b37 = L.polyline(
+                [[37.87153, -122.27301], [37.87208, -122.27308], [37.87215, -122.27311], [37.87246, -122.27314], [37.87334, -122.27322], [37.87512, -122.27343], [37.87746, -122.27369], [37.87818, -122.27374], [37.87868, -122.27381], [37.87964, -122.27392], [37.88181, -122.27416], [37.88306, -122.27429], [37.88343, -122.27432], [37.88463, -122.27447], [37.88486, -122.27453], [37.88507, -122.27465], [37.88529, -122.27481], [37.88543, -122.27494], [37.88576, -122.27529], [37.88614, -122.27561], [37.88635, -122.27575], [37.88678, -122.27599], [37.88724, -122.27619], [37.88771, -122.27631], [37.88829, -122.27644], [37.88889, -122.27656], [37.88888, -122.27683], [37.8889, -122.27717], [37.88894, -122.27746], [37.88909, -122.27798], [37.88929, -122.27844], [37.88954, -122.2789], [37.88966, -122.27922], [37.88969, -122.27936], [37.88974, -122.27973], [37.88982, -122.28029], [37.88983, -122.2807], [37.88981, -122.28093], [37.88972, -122.28124], [37.88955, -122.28162], [37.88933, -122.28205], [37.88921, -122.28244], [37.88916, -122.2827], [37.88914, -122.28295], [37.88915, -122.28319], [37.88917, -122.28339], [37.88924, -122.28372], [37.88933, -122.28402], [37.88947, -122.28463], [37.88949, -122.2848], [37.8895, -122.28551], [37.88948, -122.28578], [37.88945, -122.28596], [37.88932, -122.28647], [37.88918, -122.28682], [37.8891, -122.28699], [37.88907, -122.28707], [37.88923, -122.28712], [37.88924, -122.28713], [37.8894, -122.28718], [37.89015, -122.28742]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_1ca829fbc7b45fd94f4baa37e67d3a14);
+        
+    
+        var popup_37593ab55684007422d3365c7782365b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8c9f71f568fcb416b5a704208c2b61df = $(`<div id="html_8c9f71f568fcb416b5a704208c2b61df" style="width: 100.0%; height: 100.0%;">Safest Path</div>`)[0];
+                popup_37593ab55684007422d3365c7782365b.setContent(html_8c9f71f568fcb416b5a704208c2b61df);
+            
+        
+
+        poly_line_d6c549f57f02493a67bce0d10b2f1b37.bindPopup(popup_37593ab55684007422d3365c7782365b)
+        ;
+
+        
+    
+</script>
+</html>
