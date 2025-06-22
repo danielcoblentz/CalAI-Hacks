@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive 3D Mesh Viewer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        
+        #container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        #controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            font-size: 12px;
+            max-width: 250px;
+        }
+        
+        #controls h3 {
+            margin: 0 0 10px 0;
+            color: #64b5f6;
+            font-size: 14px;
+        }
+        
+        .control-group {
+            margin-bottom: 15px;
+        }
+        
+        .control-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        label {
+            width: 80px;
+            font-size: 11px;
+        }
+        
+        input[type="range"] {
+            flex: 1;
+            margin: 0 8px;
+        }
+        
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        
+        button {
+            background: #64b5f6;
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 11px;
+            margin: 2px;
+        }
+        
+        button:hover {
+            background: #42a5f5;
+        }
+        
+        #info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 11px;
+            backdrop-filter: blur(5px);
+        }
+        
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            z-index: 200;
+        }
+        
+        .spinner {
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid #64b5f6;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="loading">
+            <div class="spinner"></div>
+            <div>Loading 3D Mesh...</div>
+        </div>
+        
+        <div id="controls">
+            <h3>🎮 3D Controls</h3>
+            
+            <div class="control-group">
+                <div class="control-row">
+                    <input type="checkbox" id="wireframe" />
+                    <label for="wireframe">Wireframe</label>
+                </div>
+                <div class="control-row">
+                    <input type="checkbox" id="showTexture" checked />
+                    <label for="showTexture">Texture</label>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <div class="control-row">
+                    <label>Zoom:</label>
+                    <input type="range" id="zoom" min="0.1" max="5" step="0.1" value="1" />
+                </div>
+                <div class="control-row">
+                    <label>Rotation:</label>
+                    <input type="range" id="rotationSpeed" min="0" max="2" step="0.1" value="0" />
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <div style="display: flex; flex-wrap: wrap;">
+                    <button onclick="resetView()">Reset View</button>
+                    <button onclick="viewTop()">Top</button>
+                    <button onclick="viewFront()">Front</button>
+                    <button onclick="viewSide()">Side</button>
+                </div>
+            </div>
+            
+            <div style="font-size: 10px; color: #aaa; margin-top: 10px;">
+                🖱️ Left: Rotate<br>
+                🖱️ Right: Pan<br>
+                🎯 Scroll: Zoom
+            </div>
+        </div>
+        
+        <div id="info">
+            <div>Vertices: <span id="vertexCount">0</span></div>
+            <div>Triangles: <span id="triangleCount">0</span></div>
+            <div>FPS: <span id="fps">60</span></div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let scene, camera, renderer, mesh, controls;
+        let vertices = [], triangles = [], colors = [];
+        let isRotating = false;
+        let frameCount = 0;
+        let lastTime = 0;
+        
+        // Sample mesh data (you'll replace this with data from your Python script)
+        function generateSampleMesh() {
+            // Create a sample heightfield mesh from sine/cosine functions
+            const width = 50, height = 50;
+            const vertices = [];
+            const triangles = [];
+            const colors = [];
+            
+            // Generate vertices
+            for (let i = 0; i < height; i++) {
+                for (let j = 0; j < width; j++) {
+                    const x = (j - width/2) * 0.5;
+                    const z = (i - height/2) * 0.5;
+                    const y = Math.sin(x * 0.3) * Math.cos(z * 0.3) * 3;
+                    
+                    vertices.push(x, y, z);
+                    
+                    // Color based on height
+                    const heightNorm = (y + 3) / 6;
+                    colors.push(
+                        heightNorm * 0.8 + 0.2,
+                        0.5 + heightNorm * 0.3,
+                        1 - heightNorm * 0.5
+                    );
+                }
+            }
+            
+            // Generate triangles
+            for (let i = 0; i < height - 1; i++) {
+                for (let j = 0; j < width - 1; j++) {
+                    const a = i * width + j;
+                    const b = i * width + (j + 1);
+                    const c = (i + 1) * width + j;
+                    const d = (i + 1) * width + (j + 1);
+                    
+                    // Two triangles per quad
+                    triangles.push(a, b, c);
+                    triangles.push(b, d, c);
+                }
+            }
+            
+            return { vertices, triangles, colors };
+        }
+        
+        // Initialize Three.js scene
+        function init() {
+            // Create scene
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x1a1a2e);
+            
+            // Create camera
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.set(10, 10, 10);
+            camera.lookAt(0, 0, 0);
+            
+            // Create renderer
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            document.getElementById('container').appendChild(renderer.domElement);
+            
+            // Add lights
+            setupLighting();
+            
+            // Load mesh data
+            const meshData = generateSampleMesh();
+            createMesh(meshData.vertices, meshData.triangles, meshData.colors);
+            
+            // Setup controls
+            setupControls();
+            
+            // Start animation loop
+            animate();
+            
+            // Hide loading
+            document.getElementById('loading').style.display = 'none';
+        }
+        
+        function setupLighting() {
+            // Ambient light
+            const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+            scene.add(ambientLight);
+            
+            // Main directional light
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            directionalLight.position.set(10, 10, 5);
+            directionalLight.castShadow = true;
+            directionalLight.shadow.mapSize.width = 2048;
+            directionalLight.shadow.mapSize.height = 2048;
+            scene.add(directionalLight);
+            
+            // Fill light
+            const fillLight = new THREE.DirectionalLight(0x6495ed, 0.3);
+            fillLight.position.set(-5, 5, -5);
+            scene.add(fillLight);
+        }
+        
+        function createMesh(vertexArray, triangleArray, colorArray) {
+            // Create geometry
+            const geometry = new THREE.BufferGeometry();
+            
+            // Set vertices
+            const vertices = new Float32Array(vertexArray);
+            geometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
+            
+            // Set triangles (indices)
+            const indices = new Uint32Array(triangleArray);
+            geometry.setIndex(new THREE.BufferAttribute(indices, 1));
+            
+            // Set colors
+            if (colorArray && colorArray.length > 0) {
+                const colors = new Float32Array(colorArray);
+                geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+            }
+            
+            // Compute normals for proper lighting
+            geometry.computeVertexNormals();
+            
+            // Create material
+            const material = new THREE.MeshPhongMaterial({
+                vertexColors: true,
+                side: THREE.DoubleSide,
+                shininess: 30,
+                transparent: true,
+                opacity: 0.95
+            });
+            
+            // Create mesh
+            mesh = new THREE.Mesh(geometry, material);
+            mesh.castShadow = true;
+            mesh.receiveShadow = true;
+            scene.add(mesh);
+            
+            // Update info
+            document.getElementById('vertexCount').textContent = vertexArray.length / 3;
+            document.getElementById('triangleCount').textContent = triangleArray.length / 3;
+        }
+        
+        function setupControls() {
+            // Mouse controls
+            let isMouseDown = false;
+            let mouseButton = 0;
+            let previousMousePosition = { x: 0, y: 0 };
+            
+            renderer.domElement.addEventListener('mousedown', (e) => {
+                isMouseDown = true;
+                mouseButton = e.button;
+                previousMousePosition.x = e.clientX;
+                previousMousePosition.y = e.clientY;
+            });
+            
+            renderer.domElement.addEventListener('mouseup', () => {
+                isMouseDown = false;
+            });
+            
+            renderer.domElement.addEventListener('mousemove', (e) => {
+                if (!isMouseDown) return;
+                
+                const deltaX = e.clientX - previousMousePosition.x;
+                const deltaY = e.clientY - previousMousePosition.y;
+                
+                if (mouseButton === 0) { // Left button - rotate
+                    camera.position.x = camera.position.x * Math.cos(deltaX * 0.01) - camera.position.z * Math.sin(deltaX * 0.01);
+                    camera.position.z = camera.position.x * Math.sin(deltaX * 0.01) + camera.position.z * Math.cos(deltaX * 0.01);
+                    camera.position.y += deltaY * 0.05;
+                    camera.lookAt(0, 0, 0);
+                } else if (mouseButton === 2) { // Right button - pan
+                    const panSpeed = 0.05;
+                    camera.position.x += deltaX * panSpeed;
+                    camera.position.y -= deltaY * panSpeed;
+                    camera.lookAt(0, 0, 0);
+                }
+                
+                previousMousePosition.x = e.clientX;
+                previousMousePosition.y = e.clientY;
+            });
+            
+            // Disable context menu on right click
+            renderer.domElement.addEventListener('contextmenu', (e) => e.preventDefault());
+            
+            // Zoom with mouse wheel
+            renderer.domElement.addEventListener('wheel', (e) => {
+                const zoomSpeed = 0.1;
+                const zoomFactor = e.deltaY > 0 ? 1 + zoomSpeed : 1 - zoomSpeed;
+                camera.position.multiplyScalar(zoomFactor);
+                camera.lookAt(0, 0, 0);
+                e.preventDefault();
+            });
+            
+            // Control panel events
+            document.getElementById('wireframe').addEventListener('change', (e) => {
+                if (mesh) mesh.material.wireframe = e.target.checked;
+            });
+            
+            document.getElementById('showTexture').addEventListener('change', (e) => {
+                if (mesh) mesh.material.vertexColors = e.target.checked;
+            });
+            
+            document.getElementById('zoom').addEventListener('input', (e) => {
+                const zoomValue = parseFloat(e.target.value);
+                camera.position.normalize().multiplyScalar(15 * zoomValue);
+                camera.lookAt(0, 0, 0);
+            });
+            
+            document.getElementById('rotationSpeed').addEventListener('input', (e) => {
+                const speed = parseFloat(e.target.value);
+                isRotating = speed > 0;
+                rotationSpeed = speed;
+            });
+        }
+        
+        // View presets
+        function resetView() {
+            camera.position.set(10, 10, 10);
+            camera.lookAt(0, 0, 0);
+        }
+        
+        function viewTop() {
+            camera.position.set(0, 20, 0);
+            camera.lookAt(0, 0, 0);
+        }
+        
+        function viewFront() {
+            camera.position.set(0, 5, 20);
+            camera.lookAt(0, 0, 0);
+        }
+        
+        function viewSide() {
+            camera.position.set(20, 5, 0);
+            camera.lookAt(0, 0, 0);
+        }
+        
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            // Auto rotation
+            if (isRotating && mesh) {
+                mesh.rotation.y += rotationSpeed * 0.01;
+            }
+            
+            // FPS counter
+            frameCount++;
+            const currentTime = Date.now();
+            if (currentTime - lastTime >= 1000) {
+                document.getElementById('fps').textContent = frameCount;
+                frameCount = 0;
+                lastTime = currentTime;
+            }
+            
+            renderer.render(scene, camera);
+        }
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        
+        // Initialize when page loads
+        window.addEventListener('load', init);
+        
+        // Export function to load mesh data from Python
+        window.loadMeshData = function(vertexArray, triangleArray, colorArray) {
+            if (mesh) {
+                scene.remove(mesh);
+            }
+            createMesh(vertexArray, triangleArray, colorArray);
+        };
+    </script>
+</body>
+</html>
